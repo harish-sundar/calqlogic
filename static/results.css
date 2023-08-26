@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'San-Serif';
+}
+
+body {
+    background: purple;
+    color: gold;
+}
+
+h1 {
+    margin-top: 0px;
+    padding-top: 20px; /* Add padding to create space at the top */
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+    background: #4d004d;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 10px 0; 
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 10px auto;
+    max-width: 500px;
+    justify-content: center; 
+    text-align: center;
+}
+
+.back-button {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    height: 30px;
+    background: gold;
+    border: 2px solid gold;
+    border-radius: 8px;
+    font-size: 1em;
+    color: purple;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: color 0.3s;
+    text-align: center;
+    text-decoration: none;
+    line-height: 30px;
+    margin-top: 4em;
+}
+
+.back-button:hover{
+    color: gold;
+    background: purple;
+}
+
+
+.result-section {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px; 
+    padding-bottom: 20px;
+}
+
+.query-section,
+.answer-section {
+    flex: 1;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #4d004d;
+    color: gold;
+    padding: 10px 0;
+    text-align: center;
+}

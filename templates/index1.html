@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet">
+    <title>CSV Query Analyzer</title>
+</head>
+<body>
+    <h1>Welcome to the CSV Analyzer!</h1>
+    <form method="POST">
+        <div class="input">
+            <div class="input-group">
+                <label for="user_data">Enter data in CSV format</label>
+                <textarea id="user_data" name="user_data" placeholder="CSV data..." rows="4" cols="50"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="nickname">Enter a name to save CSV as</label>
+                <textarea id="nickname" name="nickname" placeholder="CSV name..." rows="4" cols="50"></textarea>
+            </div>
+        </div>
+        <br>
+        <div class="button-group">
+            <input type="submit" value="Submit">
+            <a href="{{ url_for('query', nickname=request.form['nickname']) }}" class="skip-button">Skip</a>
+            <a href="{{ url_for('view_data', nickname=nickname) }}" class="view-button">View Datasets</a>
+            <a href="{{ url_for('show_delete_page') }}" class="delete-button">Delete Dataset</a>
+        </div>
+    </form>
+    <footer>
+        &copy; CalQLogic Inc.
+    </footer>
+</body>
+</html>

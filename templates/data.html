@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='data.css') }}" rel="stylesheet">
+    <title>CSV Data</title>
+</head>
+<body>
+    <h1>
+        Existing Datasets
+    </h1>
+    <ul>
+        {% for nickname in nicknames %}
+            <li>{{ nickname }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index', user_data=request.form['user_data'], nickname=request.form['nickname']) }}" class="back-button">Back</a>
+</body>
+<footer>
+    &copy; CalQLogic Inc.
+</footer>
+</html>

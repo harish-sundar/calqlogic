@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='results.css') }}" rel="stylesheet">
+    <title>Query Result</title>
+</head>
+<body>
+    <h1>
+        Results
+    </h1>
+    <div class="result-section">
+        <div class="query-section">
+            <h2>Query:</h2>
+            <p>{{ query }}</p>
+        </div>
+        <div class="answer-section">
+            <h2>Answer:</h2>
+            <p>{{ result }}</p>
+        </div>
+    </div>
+    <a href="{{ url_for('index', user_data=request.form['user_data'], nickname=request.form['nickname']) }}" class="back-button">Back</a>
+    <footer>
+        &copy; CalQLogic Inc.
+    </footer>
+</body>
+</html>

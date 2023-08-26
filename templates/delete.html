@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="{{ url_for('static', filename='index.css') }}" rel="stylesheet">
+    <title>CSV Query Analyzer</title>
+</head>
+<body>
+    <h1>Delete Dataset</h1>
+    <form method="POST" action="{{ url_for('delete') }}">
+        <div class="input">
+            <div class="input-group">
+                <label for="user_data">Enter name of data set to delete</label>
+                <input type="text" id="nickname" name="nickname" placeholder="CSV name..." required>
+            </div>
+        </div>
+        <br>
+        <div class="button-group">
+            <input type="submit" value="Submit">
+            <a href="{{ url_for('view_data', nickname=nickname) }}" class="view-button">View Datasets</a>
+        </div>
+    </form>
+    <footer>
+        &copy; CalQLogic Inc.
+    </footer>
+</body>
+</html>
