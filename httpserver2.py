@@ -4,13 +4,13 @@ from urllib.parse import urlparse, parse_qs
 from langchain.document_loaders import CSVLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.chat_models import ChatOpenAI
+from processquery import CSVQueryProcessor
 import os
 import argparse
-import constants
 import csv
 import sys
 
-os.environ["OPENAI_API_KEY"] = constants.API_KEY
+os.environ["OPENAI_API_KEY"] = "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"
 
 NICKNAME_FILE = "nickname_data.json"
 
@@ -18,15 +18,6 @@ CSV_FILES_DIR = "csv_files"
 
 if not os.path.exists(CSV_FILES_DIR):
     os.makedirs(CSV_FILES_DIR)
-
-
-class CSVQueryProcessor:
-    def process_query(self, csv_filename, query):
-        full_csv_filename = os.path.join(CSV_FILES_DIR, csv_filename)
-        loader = CSVLoader(full_csv_filename)
-        index = VectorstoreIndexCreator().from_loaders([loader])
-        result = index.query(query, llm=ChatOpenAI())
-        return result
 
 class CSVQueryHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
