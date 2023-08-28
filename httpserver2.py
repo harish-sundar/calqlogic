@@ -11,9 +11,6 @@ import argparse
 import csv
 import sys
 
-# gives api key
-os.environ["OPENAI_API_KEY"] = constants.API_KEY
-
 CSV_FILES_DIR = "csv_files"
 
 if not os.path.exists(CSV_FILES_DIR):

@@ -5,8 +5,9 @@ from langchain.document_loaders import CSVLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
+import constants
 
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = constants.API_KEY
 
 class CSVQueryProcessor:
     def process_query(self, csv_filename, query):
