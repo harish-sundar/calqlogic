@@ -14,8 +14,6 @@ import sys
 # gives api key
 os.environ["OPENAI_API_KEY"] = constants.API_KEY
 
-NICKNAME_FILE = "nickname_data.json"
-
 CSV_FILES_DIR = "csv_files"
 
 if not os.path.exists(CSV_FILES_DIR):
