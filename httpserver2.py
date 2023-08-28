@@ -5,12 +5,14 @@ from langchain.document_loaders import CSVLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.chat_models import ChatOpenAI
 from processquery import CSVQueryProcessor
+import constants
 import os
 import argparse
 import csv
 import sys
 
-os.environ["OPENAI_API_KEY"] = "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"
+# gives api key
+os.environ["OPENAI_API_KEY"] = constants.API_KEY
 
 NICKNAME_FILE = "nickname_data.json"
 
