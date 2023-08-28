@@ -7,9 +7,11 @@ from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 import constants
 
+# get access to GPT API
 os.environ["OPENAI_API_KEY"] = constants.API_KEY
 
 class CSVQueryProcessor:
+    # uses langchain to process query
     def process_query(self, csv_filename, query):
         loader = CSVLoader(csv_filename)
         index = VectorstoreIndexCreator().from_loaders([loader])

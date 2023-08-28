@@ -5,7 +5,6 @@ from langchain.document_loaders import CSVLoader
 from langchain.indexes import VectorstoreIndexCreator
 from langchain.chat_models import ChatOpenAI
 from processquery import CSVQueryProcessor
-import constants
 import os
 import argparse
 import csv
@@ -71,11 +70,7 @@ def delete_csv_data_on_server(nickname):
         os.remove(filename)
     
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="HTTP server for CSV queries.")
-    parser.add_argument("port", type=int, help="Port number for the HTTP server.")
-    args = parser.parse_args()
-
-    PORT = args.port
+    PORT = 8001
 
     with http.server.HTTPServer(("", PORT), CSVQueryHandler) as httpd:
         print("Server started at port", PORT)
